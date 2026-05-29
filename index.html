@@ -23,12 +23,9 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:'Roboto',sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-  position:relative;
+  background:var(--bg);color:var(--white);
+  font-family:'Roboto',sans-serif;line-height:1.6;
+  overflow-x:hidden;position:relative;
 }
 body::before{
   content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;
@@ -45,20 +42,25 @@ h1,h2,h3,.eyebrow,.logo-text{font-family:'Outfit',sans-serif}
 
 .brush{position:absolute;z-index:0;pointer-events:none;opacity:.55;filter:blur(.3px)}
 
+/* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:50;
   display:flex;justify-content:center;align-items:center;gap:.7rem;
   padding:1.1rem 1rem;background:rgba(8,8,10,.55);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-border);
 }
-.logo-mark{width:30px;height:34px;display:block}
-.logo-text{font-weight:700;font-size:1.25rem;letter-spacing:-.5px}
-.logo-text span{color:var(--accent)}
+.logo-text{
+  font-weight:700;
+  font-size:1.25rem;
+  letter-spacing:-.5px;
+  color:var(--accent); /* Cambiado a todo lila */
+}
 .logo-text small{
   display:block;font-weight:300;font-size:.5rem;letter-spacing:.32em;
   color:var(--grey);text-transform:uppercase;margin-top:-2px;
 }
 
+/* ---------- layout ---------- */
 section{padding:5.5rem 1.5rem;max-width:1000px;margin:0 auto;position:relative;z-index:1}
 .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;font-weight:500;color:var(--accent);margin-bottom:1.1rem}
 h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.5px}
@@ -68,6 +70,7 @@ p{color:var(--grey);font-size:1.02rem}
 .card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:20px;position:relative;overflow:hidden}
 .justify{text-align:justify}
 
+/* ---------- hero ---------- */
 .hero{
   min-height:92vh;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;
   align-items:center;padding:6rem 1.5rem;max-width:1100px;margin:0 auto;
@@ -83,6 +86,7 @@ p{color:var(--grey);font-size:1.02rem}
 .d1{animation-delay:.05s}.d2{animation-delay:.25s}.d3{animation-delay:.45s}.d4{animation-delay:.65s}.d5{animation-delay:.5s}
 @keyframes fadeUp{to{opacity:1;transform:none}}
 
+/* ---------- phone mockup ---------- */
 .phone-wrap{display:flex;justify-content:center;position:relative}
 .phone{
   width:270px;height:540px;border-radius:36px;
@@ -109,16 +113,19 @@ p{color:var(--grey);font-size:1.02rem}
 .heart:nth-child(3){bottom:150px;right:10px;animation-delay:2s;font-size:.7rem}
 @keyframes float{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-40px);opacity:0}}
 
+/* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Outfit';font-weight:600;font-size:1rem;padding:.95rem 1.8rem;border-radius:999px;border:none;cursor:pointer;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
 .btn-primary{background:var(--accent);color:#15001c;box-shadow:0 8px 30px rgba(203,108,230,.35)}
 .btn-primary:hover{transform:scale(1.03);box-shadow:0 10px 38px rgba(203,108,230,.5)}
 .btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.18)}
 .btn-ghost:hover{transform:scale(1.03);border-color:var(--accent);color:var(--accent)}
 
+/* ---------- problem ---------- */
 .quotes{list-style:none;margin:1.6rem 0 0;display:grid;gap:.7rem}
 .quotes li{padding:.85rem 1.1rem;border-left:2px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;color:#d6d6de;font-style:italic;font-size:.98rem}
 .closer{margin-top:1.8rem;color:var(--white);font-family:'Outfit';font-weight:500;font-size:1.1rem}
 
+/* ---------- diff grid ---------- */
 .grid{display:grid;gap:1.1rem;margin-top:2.5rem}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .cell{padding:1.6rem}
@@ -126,10 +133,12 @@ p{color:var(--grey);font-size:1.02rem}
 .cell p{font-size:.96rem}
 .cell::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}
 
+/* ---------- steps ---------- */
 .steps{counter-reset:step;display:grid;gap:1rem;margin-top:2.5rem}
 .step{display:flex;gap:1.1rem;align-items:flex-start;padding:1.4rem 1.5rem}
 .step::before{counter-increment:step;content:counter(step);flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:'Outfit';font-weight:700;background:var(--accent-soft);color:var(--accent);border:1px solid rgba(203,108,230,.35)}
 
+/* ---------- proof ---------- */
 .proof{text-align:center;padding:3rem 2rem}
 .metrics{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem;margin:2.2rem 0}
 .metric .n{font-family:'Outfit';font-weight:800;font-size:clamp(2.2rem,6vw,3.4rem);color:var(--accent);line-height:1}
@@ -139,12 +148,15 @@ p{color:var(--grey);font-size:1.02rem}
 .shot{margin:2rem auto 0;max-width:340px;aspect-ratio:9/16;border-radius:18px;border:1px dashed rgba(203,108,230,.4);background:linear-gradient(160deg,rgba(203,108,230,.08),rgba(123,155,232,.05));display:grid;place-items:center;text-align:center;padding:1rem}
 .shot span{color:var(--grey);font-size:.8rem;font-family:'Outfit'}
 
+/* ---------- for who ---------- */
 .forwho{text-align:center;padding:3.5rem 2rem}
 .forwho p{max-width:640px;margin:1.4rem auto 0}
 
+/* ---------- color strip ---------- */
 .dots{display:flex;justify-content:center;gap:.6rem;margin:0 auto;padding:1rem 0}
 .dots span{width:18px;height:18px;border-radius:50%}
 
+/* ---------- final ---------- */
 .final{text-align:center;padding:4.5rem 2rem;margin-bottom:3rem}
 .final p{max-width:620px;margin:1.4rem auto 0}
 .final .btns{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -168,10 +180,8 @@ footer .logo-text{font-size:1rem}
 <body>
 
 <header>
-  <svg class="logo-mark" viewBox="0 0 80 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M2 90V26C2 12 12 2 26 2c14 0 24 10 24 24v0M50 2v64c0 14 10 24 24 24M26 26v40M50 50c0-13 10-22 24-22" fill="none" stroke="#cb6ce6" stroke-width="13" stroke-linecap="round"/>
-  </svg>
-  <div class="logo-text">mas<span>Una</span><small>Live Commerce</small></div>
+  <img src="logo.png" alt="masUna" style="max-height: 36px; width: auto; display: block;">
+  <div class="logo-text">masUna<small>Live Commerce</small></div>
 </header>
 
 <div class="hero">
@@ -268,7 +278,10 @@ footer .logo-text{font-size:1rem}
       <div class="metric"><div class="n">S/0</div><div class="l">en pauta</div></div>
     </div>
     <p style="max-width:620px;margin:0 auto">Cerraron 5 ventas. Con el sistema de seguimiento estructurado, debieron cerrar entre 10 y 15. La diferencia que dejaron sobre la mesa: varios miles de soles. Eso es exactamente lo que Más Una evita.</p>
-    <div class="shot"><span>📲 Aquí va un screenshot real<br>de un live (captura de pantalla)</span></div>
+    <div class="shot" style="border: none; background: transparent;">
+      <img src="live-screenshot.png" alt="Live Commerce Real" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span style="display:none; color:var(--grey); font-size:.8rem; font-family:'Outfit'">📲 Sube tu archivo 'live-screenshot.png' a GitHub para visualizarlo aquí</span>
+    </div>
   </div>
 </section>
 
@@ -300,7 +313,7 @@ footer .logo-text{font-size:1rem}
 </section>
 
 <footer>
-  <div class="logo-text">mas<span>Una</span></div>
+  <div class="logo-text">masUna</div>
   <p style="margin-top:.6rem">Live Commerce · Perú</p>
 </footer>
 
