@@ -8,11 +8,11 @@
   // ============================================
   const FORMSPREE_URL = 'https://formspree.io/f/xpqnlpql';
   const GUIDES = {
-    A: null, // Mapa del Ecosistema Live: se envía por WhatsApp hasta tener el enlace
-    B: null, // ¿Catálogo o comunidad?: pegar aquí el enlace de Drive cuando esté
-    C: null, // Tus primeros 90 días: pegar aquí el enlace de Drive cuando esté
+    B: 'https://drive.google.com/file/d/1UqnxvLVxy7wylFxY6UgcwrRwkthUH4f2/view', // ¿Catálogo o comunidad? (ya transmiten)
+    C: 'https://drive.google.com/file/d/1FeFsDiQXe_hvS3YBlVEBXr3r-FZWX_mN/view', // Tus primeros 90 días (nunca transmitieron)
   };
   const WA_NUMBER = '51934151082';
+  const WA_DISPLAY = '+51 934 151 082';
   const WA_TEXT = 'Hola María, hice el diagnóstico de Más Una y quiero agendar mi llamada de 30 minutos. Mi empresa es: ';
   const URL_TIKTOK = 'https://www.tiktok.com/@masuna_consultora';
   const URL_INSTAGRAM = 'https://www.instagram.com/masuna_consultora';
@@ -96,12 +96,13 @@
     { id: 'P2', text: '¿Qué vendes?', options: [
       ['a', 'Producto físico, con envío a todo el Perú'],
       ['b', 'Producto físico, solo en tienda o delivery local'],
-      ['c', 'Servicios o productos digitales'],
+      ['c', 'Comida preparada o restaurante'],
+      ['d', 'Servicios o productos digitales'],
     ]},
     { id: 'P3', text: '¿En qué rubro estás?', cols: 2, options: [
       ['a', 'Mascotas'], ['b', 'Hogar y decoración'], ['c', 'Suplementos y nutrición'], ['d', 'Tecnología y accesorios'],
       ['e', 'Juguetes'], ['f', 'Joyería y bisutería'], ['g', 'Librería y regalos'], ['h', 'Belleza y cuidado personal'],
-      ['i', 'Ropa o calzado'], ['j', 'Alimentos'], ['k', 'Otro'],
+      ['i', 'Ropa o calzado'], ['j', 'Alimentos envasados'], ['k', 'Otro'],
     ]},
     { id: 'P4', text: '¿Cuál es tu ticket promedio?', options: [
       ['a', 'Menos de S/50'], ['b', 'S/50 a S/80'], ['c', 'S/80 a S/250'], ['d', 'Más de S/250'],
@@ -112,9 +113,13 @@
     { id: 'P6', text: '¿Cuánto inviertes al mes en pauta?', options: [
       ['a', 'Nada'], ['b', 'Menos de S/1.000'], ['c', 'S/1.000 a S/3.000'], ['d', 'Más de S/3.000'],
     ]},
+    // P7 cambia según P1: quien nunca transmitió ve frenos de inicio
     { id: 'P7', text: '¿Qué te frena más hoy?', options: [
-      ['a', 'No sé cómo empezar'], ['b', 'Entra poca gente'], ['c', 'Entra gente, pero no compra'],
-      ['d', 'No sé cuánto vende el live'], ['e', 'Las clientas compran una vez y no vuelven'], ['f', 'No tengo quién transmita'],
+      ['b', 'Entra poca gente'], ['c', 'Entra gente, pero no compra'], ['d', 'No sé cuánto vende el live'],
+      ['e', 'Las clientas compran una vez y no vuelven'], ['g', 'Mi host no se siente cómoda o no tengo respaldo'],
+    ], startOptions: [
+      ['a', 'No sé por dónde empezar'], ['f', 'No tengo quién transmita'],
+      ['h', 'No sé qué mostrar ni cómo armar el live'], ['i', 'Me da miedo que nadie entre'],
     ]},
     { id: 'P8', text: '¿Qué esperas del live?', options: [
       ['a', 'Ventas este mes'], ['b', 'Probar a ver qué pasa'], ['c', 'Construir un canal propio en los próximos 6 a 12 meses'],
@@ -129,7 +134,12 @@
     d: 'Tu principal oportunidad: medir cuánto vende tu live, con un código de vendedora exclusivo.',
     e: 'Tu oportunidad está en la recompra: registrar a cada clienta y darle razones para volver.',
     f: 'Tu primer paso: elegir a la persona que va a transmitir, y a una de respaldo.',
+    g: 'Tu oportunidad está en la host: pasar de leer el producto a conversar con el chat, y tener a alguien de respaldo.',
+    h: 'Tu primer paso: un producto estrella y un live de 6 bloques de 10 minutos, con un tema que enseñe.',
+    i: 'Tu primer paso: constancia. El algoritmo trae gente nueva cuando transmites en días y horarios fijos.',
   };
+  const isOut = () => ['c', 'd'].includes(answers.P2); // comida preparada, servicios o digital: sin guía
+  const optionsFor = (q) => (q.startOptions && answers.P1 === 'a' ? q.startOptions : q.options);
 
   const answers = {};
   const contact = { nombre: '', empresa: '', cargo: '', whatsapp: '', correo: '', ciudad: '' };
@@ -156,13 +166,15 @@
 
   const renderQuestion = () => {
     const q = Q[step];
+    const opts = optionsFor(q);
+    if (answers[q.id] && !opts.some(([k]) => k === answers[q.id])) delete answers[q.id]; // cambió P1
     const sel = answers[q.id];
     const first = step === 0 && !live.classList.contains('is-diag');
     body.innerHTML = `
       ${first ? '' : `<p class="sr-only">Pregunta ${step + 1} de ${Q.length}</p>`}
       <h2 class="diag-q" tabindex="-1" data-focus>${esc(q.text)}</h2>
       <div class="opts ${q.cols === 2 ? 'grid-2' : ''}" role="group" aria-label="${esc(q.text)}">
-        ${q.options.map(([k, l]) => `<button type="button" class="opt" data-k="${k}" aria-pressed="${sel === k}"><span class="ring" aria-hidden="true"></span><span>${esc(l)}</span></button>`).join('')}
+        ${opts.map(([k, l]) => `<button type="button" class="opt" data-k="${k}" aria-pressed="${sel === k}"><span class="ring" aria-hidden="true"></span><span>${esc(l)}</span></button>`).join('')}
       </div>
       ${first
         ? '<p class="diag-foot">Diagnóstico gratis · 8 preguntas en 5 minutos. Al final recibes una guía para tu etapa.</p>'
@@ -171,7 +183,7 @@
     $$('.opt', body).forEach((b) => b.addEventListener('click', () => {
       answers[q.id] = b.dataset.k;
       $$('.opt', body).forEach((o) => o.setAttribute('aria-pressed', o === b));
-      setTimeout(() => go(step + 1), reduced ? 0 : 260);
+      setTimeout(() => (q.id === 'P2' && isOut() ? showOut() : go(step + 1)), reduced ? 0 : 260);
     }));
   };
 
@@ -209,23 +221,28 @@
     return !first;
   };
 
+  // 1) Filtro: comida preparada, servicios o digital quedan FUERA (sin guía).
+  // 2) Etapa: la guía depende solo de P1 (nunca transmitió → C; ya transmite → B).
+  // 3) Calificación: suma la invitación a agendar (datos de contacto). Negocio local también la recibe.
   const verdict = () => {
     const { P1, P2, P3, P4, P5, P6, P8 } = answers;
-    if (P2 === 'c') return { code: 'NO_CALIFICA', summary: 'Servicios o producto digital' };
-    if (P2 === 'b') return { code: 'LOCAL', summary: 'Negocio local', guide: 'C' };
-    const rubroOk = !['h', 'i'].includes(P3);
-    const base = rubroOk && ['c', 'd'].includes(P4) && ['b', 'c', 'd'].includes(P5);
+    if (isOut()) return { code: 'FUERA', summary: P2 === 'c' ? 'Comida preparada o restaurante' : 'Servicios o producto digital', tags: [] };
+    const start = P1 === 'a';
+    const v = start
+      ? { code: 'INICIO', summary: 'Nunca transmitió', guide: 'C', tags: [] }
+      : { code: 'OPTIMIZACION', summary: 'Ya transmite', guide: 'B', tags: [] };
+    if (P2 === 'b') { v.tags.push('LOCAL'); v.contact = true; return v; }
+    const base = !['h', 'i'].includes(P3) && ['c', 'd'].includes(P4) && ['b', 'c', 'd'].includes(P5);
     const p6 = ['c', 'd'].includes(P6);
     const p8 = P8 === 'c';
-    if (base && p6 && p8) return { code: 'ECOSISTEMA', summary: 'Lead calificado: ofrecer llamada de 30 minutos', guide: 'A' };
-    const tibio = base && (p6 !== p8);
-    if (P1 === 'a') return { code: 'INICIO', summary: 'Nunca transmitió', guide: 'C', tibio };
-    return { code: 'OPTIMIZACION', summary: 'Ya transmite', guide: 'B', tibio };
+    if (base && p6 && p8) { v.tags.push('LLAMADA'); v.contact = true; }
+    else if (base && p6 !== p8) v.tags.push('TIBIO');
+    return v;
   };
 
   const summaryText = (v) => {
-    const labels = Q.map((q) => { const o = q.options.find(([k]) => k === answers[q.id]); return `${q.id}: ${o ? o[1] : '—'}`; }).join(' | ');
-    return `[${v.code}]${v.tibio ? ' [TIBIO]' : ''} ${v.summary} || ${labels}`;
+    const labels = Q.map((q) => { const o = [...q.options, ...(q.startOptions || [])].find(([k]) => k === answers[q.id]); return `${q.id}: ${o ? o[1] : '—'}`; }).join(' | ');
+    return `[${v.code}]${v.tags.map((t) => ` [${t}]`).join('')} ${v.summary} || ${labels}`;
   };
 
   const waLink = () => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT + contact.empresa.trim())}`;
@@ -233,29 +250,26 @@
   const renderResult = (v) => {
     const line = P7_LINES[answers.P7] || '';
     const T = {
-      ECOSISTEMA: ['Tu negocio tiene lo necesario para construir un ecosistema live.', 'Te invitamos a una llamada de diagnóstico de 30 minutos: revisamos tus lives, tu equipo y tus números, y te decimos con honestidad si tiene sentido trabajar juntos.'],
-      OPTIMIZACION: ['Ya transmites: ahora toca saber si tu live es catálogo o comunidad.', 'Tu guía trae un autodiagnóstico y un plan de 14 días.'],
+      OPTIMIZACION: ['Ya transmites: ahora toca saber si tu live es catálogo o comunidad.', 'Tu guía trae el mapa de las 6 etapas, un autodiagnóstico y un plan de 14 días.'],
       INICIO: ['Estás listo para empezar con el pie derecho.', 'Tu guía te acompaña en tus primeros 90 días en TikTok Live.'],
-      LOCAL: ['Tu modelo pide un enfoque local.', 'Te dejamos la guía para empezar, con una nota para negocios locales.'],
-      NO_CALIFICA: ['Hoy el live no es tu mejor canal.', 'Te dejamos nuestro contenido por si tu modelo cambia.'],
+      FUERA: ['Hoy el live no es el mejor canal para tu modelo.', 'Funciona mejor con producto físico que se pueda enviar a todo el Perú. Te dejamos nuestro contenido por si tu modelo cambia.'],
     }[v.code];
     const guideUrl = v.guide ? GUIDES[v.guide] : null;
     let actions = '';
-    if (v.code === 'ECOSISTEMA') {
-      actions += `<a class="btn btn-dark" href="${waLink()}" target="_blank" rel="noopener">Agendar mi llamada por WhatsApp</a>`;
-      actions += guideUrl
-        ? `<a class="btn btn-line" href="${guideUrl}" target="_blank" rel="noopener">Descargar el Mapa del Ecosistema Live</a>`
-        : '<p class="diag-foot">Te enviaremos el Mapa del Ecosistema Live por WhatsApp.</p>';
-    } else if (guideUrl) {
+    if (guideUrl) {
       actions += `<a class="btn btn-dark" href="${guideUrl}" target="_blank" rel="noopener">Descargar mi guía</a>`;
     } else if (v.guide) {
       actions += '<p class="result-line"><strong>Te enviaremos tu guía por WhatsApp.</strong></p>';
+    }
+    if (v.contact) {
+      actions += `<p class="result-line">Agenda tu diagnóstico de 30 minutos: revisamos tu negocio y te decimos con honestidad si tiene sentido trabajar juntos.</p>`;
+      actions += `<a class="btn btn-line" href="${waLink()}" target="_blank" rel="noopener">WhatsApp ${WA_DISPLAY}</a>`;
     }
     actions += `<p class="diag-foot">Síguenos: <a href="${URL_TIKTOK}" target="_blank" rel="noopener">TikTok</a> · <a href="${URL_INSTAGRAM}" target="_blank" rel="noopener">Instagram</a></p>`;
     body.innerHTML = `
       <p class="sr-only">Tu diagnóstico</p>
       <h2 class="diag-q" tabindex="-1" data-focus>${esc(T[0])}</h2>
-      ${line && v.code !== 'NO_CALIFICA' ? `<p class="result-line"><strong>${esc(line)}</strong></p>` : ''}
+      ${line && v.code !== 'FUERA' ? `<p class="result-line"><strong>${esc(line)}</strong></p>` : ''}
       <p class="result-line">${esc(T[1])}</p>
       <div class="result-actions">${actions}</div>
       <div class="diag-nav"><button type="button" class="link-btn" data-back-live>Volver al live</button></div>
@@ -276,11 +290,17 @@
     }
   };
 
+  // FUERA: se corta en P2, sin formulario ni guía
+  const showOut = () => {
+    step = RESULT_STEP; renderRoute(); route.style.display = 'none';
+    renderResult(verdict()); focusHeading();
+  };
+
   const exitDiag = () => { live.classList.remove('is-diag'); route.style.display = ''; step = 0; renderRoute(); renderQuestion(); };
 
   body.addEventListener('click', (e) => {
     if (e.target.closest('[data-back]')) { if (step === 0) exitDiag(); else go(step - 1); }
-    if (e.target.closest('[data-next]')) go(step + 1);
+    if (e.target.closest('[data-next]')) { if (Q[step] && Q[step].id === 'P2' && isOut()) showOut(); else go(step + 1); }
     if (e.target.closest('[data-back-live]')) { Object.keys(answers).forEach((k) => delete answers[k]); exitDiag(); }
   });
 
