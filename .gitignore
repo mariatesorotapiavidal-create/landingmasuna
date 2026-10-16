@@ -1,0 +1,6 @@
+.impeccable/review/
+.impeccable/config.local.json
+inputs/
+# Documentos internos: no publicar (repo público)
+PRODUCT.md
+.impeccable/
