@@ -155,9 +155,11 @@
 
   // espectadores: se mueve un poco, como en un live real
   const viewersEl = $('[data-viewers]');
-  let viewers = 140 + Math.floor(Math.random() * 30);
+  // Rango real de un live de marca (Catta vendía con menos de 30 conectados): sube y baja entre 10 y 80
+  const V_MIN = 10, V_MAX = 80;
+  let viewers = 20 + Math.floor(Math.random() * 20);
   viewersEl.textContent = viewers;
-  if (!reduced) setInterval(() => { viewers = Math.max(120, viewers + Math.round(Math.random() * 6 - 2)); viewersEl.textContent = viewers; }, 2600);
+  if (!reduced) setInterval(() => { viewers = Math.min(V_MAX, Math.max(V_MIN, viewers + Math.round(Math.random() * 12 - 6))); viewersEl.textContent = viewers; }, 2600);
 
   // ============================================
   // PANTALLAS
