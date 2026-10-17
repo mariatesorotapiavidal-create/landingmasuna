@@ -3,443 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Más Una · Live Commerce para marcas peruanas</title>
-  <meta name="description" content="Construimos tu canal de venta en TikTok Live: descubrimiento, comunidad, venta y recompra, con sistema antes y después del live. Haz tu diagnóstico gratis.">
+  <title>Más Una · Diagnóstico de tu live</title>
+  <meta name="description" content="¿Tu live vende o solo muestra? Haz el diagnóstico de 3 preguntas y llévate una guía para tu etapa.">
   <meta name="theme-color" content="#000000">
-  <meta property="og:title" content="Más Una · Live Commerce para marcas peruanas">
-  <meta property="og:description" content="El live no es un canal de ventas. Es el corazón de tu ecosistema de ventas. Haz tu diagnóstico gratis: 8 preguntas en 5 minutos.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_PE">
+  <meta name="robots" content="noindex">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="preload" href="fonts/oswald-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/roboto-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <main class="app">
 
-  <header class="site-head" data-head>
-    <a class="brand" href="#inicio" aria-label="Más Una, ir al inicio">
-      <img src="img/masuna-wordmark.png" alt="Más Una" width="117" height="23">
-    </a>
-    <p class="guide" data-guide aria-hidden="true">
-      <span class="guide-ring"></span>
-      <span class="guide-n" data-guide-n>Estación 1/6</span>
-      <span class="guide-name" data-guide-name>Descubrimiento</span>
-    </p>
-    <nav class="nav" aria-label="Secciones">
-      <a href="#caso">Caso Catta</a>
-      <a href="#la-linea">El sistema</a>
-      <a href="#para-ti">¿Es para mí?</a>
-      <a href="#preguntas">Preguntas</a>
-    </nav>
-    <div class="follow">
-      <span class="follow-label">Síguenos en</span>
-      <a class="soc" href="https://www.tiktok.com/@masuna_consultora" target="_blank" rel="noopener" aria-label="TikTok de Más Una"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.790-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.980-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg><span class="soc-name">TikTok</span></a>
-      <a class="soc" href="https://www.instagram.com/masuna_consultora" target="_blank" rel="noopener" aria-label="Instagram de Más Una"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85C2.38 3.920 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33 0 7.05.07 2.7.27.27 2.7.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s0-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67 0 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg><span class="soc-name">Instagram</span></a>
+    <!-- PARTE 1: el live (diagnóstico gamificado) -->
+    <section class="live" id="live" aria-label="Diagnóstico de tu live">
+      <img class="live-bg" src="img/catta-set.jpg" alt="" width="720" height="900" fetchpriority="high">
+      <div class="live-shade" aria-hidden="true"></div>
+
+      <header class="live-top">
+        <a class="host" href="https://www.tiktok.com/@masuna_consultora" target="_blank" rel="noopener">
+          <img src="img/masuna-isotipo.png" alt="" width="36" height="36">
+          <span class="host-txt">
+            <span class="host-name">masuna_consultora</span>
+            <span class="host-sub">Live commerce · Perú</span>
+          </span>
+          <span class="host-follow">Seguir</span>
+        </a>
+        <div class="live-stats">
+          <span class="pill-live">En vivo</span>
+          <span class="viewers"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6.5 5 2.3 9.2 1 12c1.3 2.8 5.5 7 11 7s9.7-4.2 11-7c-1.3-2.8-5.5-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/></svg><span data-viewers>148</span></span>
+        </div>
+      </header>
+
+      <div class="goal" data-goal>
+        <svg class="goal-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V3h2v1h13l-3 5 3 5H6v7H4Z"/></svg>
+        <span class="goal-txt"><span class="goal-k">Meta del live</span> Tu diagnóstico</span>
+        <span class="goal-bar" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="goal-n" data-goal-n>0/3</span>
+      </div>
+
+      <div class="gift" data-gift aria-hidden="true"></div>
+
+      <div class="stage" data-stage aria-live="polite"></div>
+
+      <ol class="chat" data-chat aria-hidden="true"></ol>
+
+      <div class="rail">
+        <button class="rail-btn" type="button" data-like aria-label="Dar like al live">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.6 1.1 5.4 3 1.8-1.9 3.3-3 5.4-3 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21Z"/></svg>
+          <span data-likes>0</span>
+        </button>
+        <a class="rail-btn" href="https://www.tiktok.com/@masuna_consultora" target="_blank" rel="noopener" aria-label="TikTok de Más Una">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a class="rail-btn" href="https://www.instagram.com/masuna_consultora" target="_blank" rel="noopener" aria-label="Instagram de Más Una">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33 0 7.05.07 2.7.27.27 2.7.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s0-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67 0 15.26 0 12 0Zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg>
+          <span>IG</span>
+        </a>
+      </div>
+      <div class="hearts" data-hearts aria-hidden="true"></div>
+
+      <noscript><p class="nojs">Escríbenos por WhatsApp al <a href="https://wa.me/51934151082">+51 934 151 082</a> y te enviamos tu guía.</p></noscript>
+    </section>
+
+    <!-- PARTE 2: el sistema (se desbloquea al dejar los datos) -->
+    <div class="sistema" id="sistema" data-sistema hidden>
+
+      <section class="s-hook" aria-labelledby="hook-t">
+        <p class="hook-big" id="hook-t"><span data-count="582">+582%</span></p>
+        <p class="hook-sub">creció la venta del live de una cadena de 5 tiendas en Huancayo, en 5 meses.</p>
+        <div class="hook-line" aria-hidden="true">
+          <span class="hl-a"><small>Mayo</small>S/600</span>
+          <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M2 54 C70 52 110 46 198 6"/></svg>
+          <span class="hl-b"><small>Septiembre</small>S/4.090</span>
+        </div>
+        <p class="src">Datos del piloto con Tiendas Catta, 2026.</p>
+      </section>
+
+      <section class="s-fix" aria-labelledby="fix-t">
+        <h2 id="fix-t">Lo que te pasa <span class="arrow" aria-hidden="true">→</span> <span class="hl">cómo se resuelve</span></h2>
+        <ol class="fixes" data-fixes></ol>
+      </section>
+
+      <section class="s-start" aria-labelledby="start-t">
+        <h2 id="start-t">Cómo empiezas</h2>
+        <ol class="steps">
+          <li><span class="step-n">1</span><b>Diagnóstico de 30 min</b><span>Vemos tus lives, tu producto y tu equipo.</span></li>
+          <li><span class="step-n">2</span><b>6 meses acompañado</b><span>Tu host aprende el formato y armamos el sistema: WhatsApp, bot con IA y medición.</span></li>
+          <li><span class="step-n">3</span><b>Tu canal propio</b><span>Un live que vende, medido por hora, que ya no depende solo de la pauta.</span></li>
+        </ol>
+      </section>
+
+      <section class="s-final" aria-labelledby="final-t">
+        <h2 id="final-t">Tu competencia todavía usa el live como catálogo. <span class="hl">Tú puedes empezar hoy.</span></h2>
+        <div data-final-cta></div>
+        <p class="socials"><a href="https://www.tiktok.com/@masuna_consultora" target="_blank" rel="noopener">TikTok</a><a href="https://www.instagram.com/masuna_consultora" target="_blank" rel="noopener">Instagram</a><span>@masuna_consultora</span></p>
+      </section>
     </div>
-    <a class="btn btn-head" href="#diagnostico" data-start-diag>Diagnóstico</a>
-  </header>
-
-  <main id="contenido">
-    <div class="spine" data-spine aria-hidden="true"><span class="spine-fill"></span></div>
-
-    <!-- HERO: un live en curso -->
-    <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="live" data-live>
-        <div class="feed" aria-hidden="true">
-          <img src="img/catta-set.jpg" alt="" width="720" height="900" fetchpriority="high">
-        </div>
-
-        <div class="live-top">
-          <div class="host">
-            <img class="host-avatar" src="img/masuna-isotipo.png" alt="" width="40" height="40">
-            <div>
-              <p class="host-name">masuna_consultora</p>
-              <p class="host-note">Imagen: set de live de Tiendas Catta</p>
-            </div>
-          </div>
-          <div class="live-stats">
-            <span class="pill-live">En vivo</span>
-            <span class="viewers">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6.5 5 2.3 9.2 1 12c1.3 2.8 5.5 7 11 7s9.7-4.2 11-7c-1.3-2.8-5.5-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/></svg>
-              <span data-viewers>612</span><span class="sr-only"> personas conectadas</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="hero-copy">
-          <h1 id="hero-title"><span>El live no es un canal de ventas.</span> <span class="hl">Es el corazón de tu ecosistema de ventas.</span></h1>
-          <p class="hero-sub">
-            <span class="pinned-label" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M15 3l6 6-3 1-4 4 .5 4.5-1.5 1.5-4-4-5 5-1-1 5-5-4-4 1.5-1.5L10 10l4-4 1-3Z"/></svg>
-              Comentario fijado
-            </span>
-            Construimos tu canal de TikTok Live para que descubra clientas en todo el Perú, las convierta en comunidad y las haga volver a comprar. Con un sistema antes y después del live, para que nadie se escape.
-          </p>
-          <a class="callout" href="#diagnostico" data-start-diag>
-            <span class="callout-t">Descubre si calificas para crecer con nosotros</span>
-            <span class="callout-s">Con 8 preguntas en 5 minutos</span>
-            <svg class="callout-arrow is-down" viewBox="0 0 60 70" aria-hidden="true"><path d="M30 4c-10 16 14 26 2 52"/><path d="M20 48l12 12 10-14"/></svg>
-            <svg class="callout-arrow is-left" viewBox="0 0 150 120" aria-hidden="true"><path d="M140 6c4 50-40 92-118 100"/><path d="M38 92 20 106l18 12"/></svg>
-          </a>
-          <p class="proof-line">
-            <span><strong>S/4.090</strong> vendidos en 21 días con el live de Tiendas Catta</span>
-            <span><strong>S/204</strong> por hora de live</span>
-            <span><strong>82%</strong> del tráfico sin pauta</span>
-          </p>
-        </div>
-
-        <ol class="chat" data-chat aria-hidden="true"></ol>
-        <div class="hearts" data-hearts aria-hidden="true"></div>
-
-        <!-- El cartel en pantalla: diagnóstico -->
-        <div class="sign" id="diagnostico" data-diag>
-          <form class="diag" data-diag-form novalidate>
-            <div class="diag-route" data-route aria-hidden="true"></div>
-            <div class="diag-body" data-diag-body aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- DOLORES -->
-    <section class="section pains" aria-labelledby="pains-title">
-      <div class="wrap">
-        <h2 id="pains-title">¿Te suena alguna de estas?</h2>
-        <ul class="pain-list" data-reveal aria-label="Comentarios de dueños de negocio en un live">
-          <li><span class="pc-avatar" aria-hidden="true">E</span><p><b>empresario_trujillo</b>Quiero crecer a nivel nacional y no sé cómo 😩</p></li>
-          <li><span class="pc-avatar" aria-hidden="true">J</span><p><b>Juan34</b>Hago lives, pero no cierro muchas ventas</p></li>
-          <li><span class="pc-avatar" aria-hidden="true">I</span><p><b>IndustriaMF</b>Pagar publicidad en redes es caro, quisiera explorar otras formas de vender online</p></li>
-          <li><span class="pc-avatar" aria-hidden="true">T</span><p><b>tienda.arequipa</b>Entra gente al live, pero se va en segundos</p></li>
-          <li><span class="pc-avatar" aria-hidden="true">M</span><p><b>mili_store</b>¿Cómo sé cuánto me vende el live?</p></li>
-          <li><span class="pc-avatar" aria-hidden="true">C</span><p><b>calzados.lucho</b>Mis clientas compran una vez y no vuelven 😕</p></li>
-        </ul>
-        <p class="pain-turn">No es tu producto ni tu cámara. <span class="hl">La mayoría usa el live como un catálogo, y por eso no funciona.</span></p>
-        <p class="lede">Prenden la cámara, muestran el producto, leen el precio y repiten. El algoritmo nota que la gente se va en segundos y deja de mostrarte. El live no es una vitrina: es una conversación.</p>
-
-        <figure class="retention" data-reveal>
-          <figcaption>Cuánto se queda la gente en un live, según lo que haces frente a la cámara</figcaption>
-          <div class="ret-row">
-            <p class="ret-label">Leer la ficha técnica</p>
-            <div class="ret-track"><span class="ret-line" style="--to: calc(28 / 110)"></span><span class="ret-end" style="--to: calc(28 / 110)"></span></div>
-            <p class="ret-value">22–28 s</p>
-          </div>
-          <div class="ret-row is-good">
-            <p class="ret-label">Clase en vivo con una marca</p>
-            <div class="ret-track"><span class="ret-line" style="--to: calc(109 / 110)"></span><span class="ret-end" style="--to: calc(109 / 110)"></span></div>
-            <p class="ret-value">109 s</p>
-          </div>
-          <p class="source">Datos del piloto con Tiendas Catta, 2026.</p>
-        </figure>
-
-      </div>
-    </section>
-
-    <!-- CASO CATTA -->
-    <section class="section case" id="caso" aria-labelledby="case-title">
-      <div class="wrap">
-        <h2 id="case-title">Cómo una cadena de 5 tiendas en Huancayo convirtió su live en un canal de venta.</h2>
-
-        <div class="growth">
-          <p class="g-from"><span class="g-m">Mes 1 · junio</span><strong>S/600</strong></p>
-          <span class="g-line" aria-hidden="true"></span>
-          <p class="g-to"><span class="g-m">Mes 4 · septiembre</span><strong data-count="4090" data-prefix="S/" data-thousands>S/4.090</strong></p>
-          <p class="g-eq"><strong>= +582%</strong> de crecimiento del canal en solo 4 meses</p>
-        </div>
-
-        <div class="charts" data-reveal>
-          <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#000"/><rect width="4" height="8" fill="#c96ce1"/></pattern></defs></svg>
-          <figure class="chart">
-            <figcaption><span class="chart-t">Ventas</span> <span class="chart-u">en soles</span></figcaption>
-            <svg viewBox="0 0 300 190" role="img" aria-label="Ventas, junio a septiembre: S/600, S/454, S/870, S/4.090"><line class="base" x1="0" x2="300" y1="160" y2="160"/><g class="bar"><title>Jun: S/600</title><path d="M15.5 160 V145.5 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="37.5" y="133.5">S/600</text><text class="bar-m" x="37.5" y="182">Jun</text></g><g class="bar"><title>Jul: S/454</title><path d="M90.5 160 V150.0 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="112.5" y="138.0">S/454</text><text class="bar-m" x="112.5" y="182">Jul</text></g><g class="bar"><title>Ago: S/870</title><path d="M165.5 160 V137.2 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="187.5" y="125.2">S/870</text><text class="bar-m" x="187.5" y="182">Ago</text></g><g class="bar is-alt"><title>Sep: S/4.090</title><path d="M240.5 160 V38.0 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="262.5" y="26.0">S/4.090</text><text class="bar-m" x="262.5" y="182">Sep</text></g></svg>
-            <table class="sr-only"><caption>Ventas</caption><tr><th>Mes</th><th>en soles</th></tr><tr><th scope="row">Jun</th><td>S/600</td></tr><tr><th scope="row">Jul</th><td>S/454</td></tr><tr><th scope="row">Ago</th><td>S/870</td></tr><tr><th scope="row">Sep</th><td>S/4.090</td></tr></table>
-            <p class="chart-note">Sep (rayada): venta con el código del live. Jun–ago: venta registrada del bot.</p>
-          </figure>
-          <figure class="chart">
-            <figcaption><span class="chart-t">Retención</span> <span class="chart-u">segundos en promedio</span></figcaption>
-            <svg viewBox="0 0 300 190" role="img" aria-label="Retención, junio a septiembre: 55,7 s, 42,8 s, 55,0 s, 57,9 s"><line class="base" x1="0" x2="300" y1="160" y2="160"/><g class="bar"><title>Jun: 55,7 s</title><path d="M15.5 160 V42.8 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="37.5" y="30.8">55,7 s</text><text class="bar-m" x="37.5" y="182">Jun</text></g><g class="bar"><title>Jul: 42,8 s</title><path d="M90.5 160 V70.9 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="112.5" y="58.9">42,8 s</text><text class="bar-m" x="112.5" y="182">Jul</text></g><g class="bar"><title>Ago: 55,0 s</title><path d="M165.5 160 V44.3 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="187.5" y="32.3">55,0 s</text><text class="bar-m" x="187.5" y="182">Ago</text></g><g class="bar"><title>Sep: 57,9 s</title><path d="M240.5 160 V38.0 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="262.5" y="26.0">57,9 s</text><text class="bar-m" x="262.5" y="182">Sep</text></g></svg>
-            <table class="sr-only"><caption>Retención</caption><tr><th>Mes</th><th>segundos en promedio</th></tr><tr><th scope="row">Jun</th><td>55,7 s</td></tr><tr><th scope="row">Jul</th><td>42,8 s</td></tr><tr><th scope="row">Ago</th><td>55,0 s</td></tr><tr><th scope="row">Sep</th><td>57,9 s</td></tr></table>
-            <p class="chart-note">Desde la mentoría a la host (21/09): 68,5 s.</p>
-          </figure>
-          <figure class="chart">
-            <figcaption><span class="chart-t">Comentarios</span> <span class="chart-u">personas que comentaron</span></figcaption>
-            <svg viewBox="0 0 300 190" role="img" aria-label="Comentarios, junio a septiembre: 687, 506, 850, 1.357"><line class="base" x1="0" x2="300" y1="160" y2="160"/><g class="bar"><title>Jun: 687</title><path d="M15.5 160 V100.2 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="37.5" y="88.2">687</text><text class="bar-m" x="37.5" y="182">Jun</text></g><g class="bar"><title>Jul: 506</title><path d="M90.5 160 V117.0 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="112.5" y="105.0">506</text><text class="bar-m" x="112.5" y="182">Jul</text></g><g class="bar"><title>Ago: 850</title><path d="M165.5 160 V85.1 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="187.5" y="73.1">850</text><text class="bar-m" x="187.5" y="182">Ago</text></g><g class="bar"><title>Sep: 1.357</title><path d="M240.5 160 V38.0 q0 -4 4 -4 h36 q4 0 4 4 V160 Z"/><text class="bar-v" x="262.5" y="26.0">1.357</text><text class="bar-m" x="262.5" y="182">Sep</text></g></svg>
-            <table class="sr-only"><caption>Comentarios</caption><tr><th>Mes</th><th>personas que comentaron</th></tr><tr><th scope="row">Jun</th><td>687</td></tr><tr><th scope="row">Jul</th><td>506</td></tr><tr><th scope="row">Ago</th><td>850</td></tr><tr><th scope="row">Sep</th><td>1.357</td></tr></table>
-          </figure>
-        </div>
-        <p class="source">Datos del piloto con Tiendas Catta, 2026. Junio: venta registrada del bot de WhatsApp. Septiembre: venta con el código exclusivo del live, del 10 al 30.</p>
-
-        <div class="mockups">
-          <figure class="phone">
-            <img src="img/live-catta-1.jpg" alt="Captura de un live de Catta: la host muestra labiales Essence, con el letrero 5 tiendas en Huancayo y comentarios preguntando precios" width="720" height="1536" loading="lazy">
-            <figcaption>Un live de Catta: producto en mano y el chat preguntando precios.</figcaption>
-          </figure>
-          <figure class="phone">
-            <img src="img/live-catta-2.jpg" alt="Captura de un live de Catta desde la tienda: la host ríe mientras enseña maquillaje básico" width="480" height="980" loading="lazy">
-            <figcaption>En vivo desde la tienda: una clase, no una lista de precios.</figcaption>
-          </figure>
-        </div>
-
-        <figure class="quote">
-          <img class="quote-photo" src="img/jose-cabanillas.jpg" alt="José Cabanillas parado en la puerta de su tienda" width="600" height="853" loading="lazy">
-          <blockquote>
-            <p>«Antes había mucha improvisación: <span class="hl">no había una estrategia</span> detrás de lo que queríamos trabajar digitalmente. Hoy tenemos <span class="hl">más presencia digital</span> y ejecutamos la estrategia como debe ser. Lo que más me ha gustado es que ha sido <span class="hl">acción, mucha acción</span>. <span class="hl">Los resultados llegaron más rápido de lo que esperaba</span>, eso me sorprendió.»</p>
-            <p>«A otro dueño le diría que esto <span class="hl">no es una moda</span> que va a pasar. El live va a ser <span class="hl">uno de los principales canales de venta</span>, incluso por encima de las tiendas virtuales.»</p>
-          </blockquote>
-          <figcaption>
-            <p class="quote-name">José Cabanillas, CEO de Catta</p>
-            <p class="quote-role">Cadena retail especializada en belleza y cuidado personal, con 14 años de experiencia y 5 tiendas en Huancayo. Partner comercial de marcas globales como Maybelline, Essence, Catrice, Salerm, Byphasse y muchas más.</p>
-          </figcaption>
-        </figure>
-
-        <div class="lusan">
-          <h3>También en Lima: Lusan, calzado industrial</h3>
-          <p class="lusan-figs"><span><strong>720</strong> personas conectadas a la vez</span><span><strong>400</strong> leads en 3 meses</span><span><strong>S/0</strong> en pauta</span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EL SISTEMA -->
-    <section class="section loop" id="la-linea" aria-labelledby="loop-title">
-      <div class="wrap">
-        <h2 id="loop-title" class="h2-logo">¿En qué consiste el sistema Live Commerce de <img src="img/masuna-wordmark.png" alt="Más Una" width="117" height="23">?</h2>
-        <p class="lede">Es un <span class="hl">ecosistema phygital</span>: lo digital (el live, el grupo de WhatsApp y un <span class="hl">bot con IA</span>) y lo físico (tus tiendas) conectados en una sola línea. El live descubre y atrae. Cada persona que pregunta queda capturada como lead. La venta se cierra donde la clienta prefiera: en el live, por WhatsApp o en tu tienda. Y la comunidad la hace volver.</p>
-      </div>
-
-      <div class="loop-grid wrap">
-        <ol class="stations" data-stations>
-          <li class="station" data-station="1" data-name="Descubrimiento">
-            <span class="st-ring" aria-hidden="true">1</span>
-            <p class="st-pain">«Nadie ve mis lives.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 1, Descubrimiento: </span>Que el algoritmo te encuentre.</h3>
-            <p>Lives constantes y un video corto que anuncia cada tema. TikTok te muestra a público nuevo de todo el Perú, sin pauta.</p>
-          </li>
-          <li class="station" data-station="2" data-name="Atracción">
-            <span class="st-ring" aria-hidden="true">2</span>
-            <p class="st-pain">«Entran y se van en segundos.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 2, Atracción: </span>Conversa. No leas la ficha.</h3>
-            <p>Una host entrenada que enseña y conversa. El algoritmo premia lo que retiene.</p>
-            <p class="st-lead"><span class="st-lead-tag">Captura de leads</span> La host invita al chat a escribir por WhatsApp para recibir precios, promos y el catálogo.</p>
-          </li>
-          <li class="station" data-station="3" data-name="Nutrición">
-            <span class="st-ring" aria-hidden="true">3</span>
-            <p class="st-pain">«Preguntan y desaparecen.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 3, Nutrición: </span>Que el live no termine en el live.</h3>
-            <p>Un grupo de WhatsApp y un <span class="hl">bot con IA</span> que responde catálogo y precios a cualquier hora.</p>
-            <p class="st-lead"><span class="st-lead-tag">Captura de leads</span> Quien escribe queda registrado con su número: el <span class="hl">bot con IA</span> le responde y le da seguimiento.</p>
-          </li>
-          <li class="station" data-station="4" data-name="Conversión">
-            <span class="st-ring" aria-hidden="true">4</span>
-            <p class="st-pain">«No sé cuánto me vende el live.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 4, Conversión: </span>Mide el live como a una vendedora.</h3>
-            <p>Un código exclusivo del live registra cada venta: en el live, por WhatsApp o en tu tienda.</p>
-            <p class="st-lead"><span class="st-lead-tag">Captura de leads</span> El código marca qué ventas nacieron en el live, aunque se cierren en tu tienda.</p>
-          </li>
-          <li class="station" data-station="5" data-name="Recompra">
-            <span class="st-ring" aria-hidden="true">5</span>
-            <p class="st-pain">«Compran una vez y no vuelven.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 5, Recompra: </span>Captura a cada clienta.</h3>
-            <p>Una comunidad de WhatsApp que redirige el tráfico al live, impulsa la recompra y fideliza. Ahí trabajas a ese 20% de clientas recurrentes que más te compra, y las exprimes con contenido, avisos y promos exclusivas.</p>
-            <p class="st-lead"><span class="st-lead-tag">Captura de leads</span> Cada compradora entra a la comunidad con su número: sabes quién vuelve y cuándo.</p>
-          </li>
-          <li class="station" data-station="6" data-name="Fidelización">
-            <span class="st-ring" aria-hidden="true">6</span>
-            <p class="st-pain">«No tengo comunidad.»</p>
-            <h3 class="st-imp"><span class="sr-only">Estación 6, Fidelización: </span>Premia el mérito, no el azar.</h3>
-            <p>Un club con beneficios por nivel y reconocimiento en el live. Nada de sorteos.</p>
-          </li>
-          <li class="station is-return" data-station="6" data-name="Fidelización">
-            <span class="st-ring" aria-hidden="true"></span>
-            <p class="st-imp">Y la comunidad vuelve al live. La línea empieza otra vez.</p>
-          </li>
-        </ol>
-
-        <div class="map" aria-hidden="true">
-          <svg class="map-svg" viewBox="0 0 400 400" data-map>
-            <circle class="map-track" cx="200" cy="200" r="150"/>
-            <circle class="map-fill" cx="200" cy="200" r="150" pathLength="100"/>
-            <g data-map-stops></g>
-            <g class="map-train-g" data-map-train><circle class="map-train" r="9" cx="200" cy="50"/></g>
-          </svg>
-          <p class="map-caption" data-map-caption>Descubrimiento</p>
-        </div>
-      </div>
-
-      </div>
-    </section>
-
-    <!-- PARA QUIÉN -->
-    <section class="section who" id="para-ti" aria-labelledby="who-title">
-      <div class="wrap">
-        <h2 id="who-title">¿Este sistema es para mí?</h2>
-        <p class="lede">Trabajamos con marcas que quieren construir un canal, no solo vender esta semana.</p>
-        <div class="who-grid">
-          <div>
-            <h3>Es para ti si</h3>
-            <ul class="rings yes">
-              <li>Vendes producto físico y envías a todo el Perú.</li>
-              <li>Tienes al menos una persona que ve marketing.</li>
-              <li>Ya inviertes en pauta y quieres un canal que no dependa solo de ella.</li>
-              <li>Puedes sostener un proyecto de 6 meses.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Todavía no es para ti si</h3>
-            <ul class="rings no">
-              <li>Vendes servicios, productos digitales o comida preparada.</li>
-              <li>Necesitas que el live pague el servicio desde el primer mes.</li>
-            </ul>
-            <p class="small">Si vendes producto físico, el diagnóstico te entrega una guía gratuita para tu etapa, aunque todavía no sea momento de trabajar juntos.</p>
-          </div>
-        </div>
-        <a class="btn btn-big" href="#diagnostico" data-start-diag>Descubre si calificas</a>
-        <p class="btn-after">8 preguntas en 5 minutos.</p>
-      </div>
-    </section>
-
-    <!-- POR QUÉ AHORA -->
-    <section class="section now" aria-labelledby="now-title">
-      <div class="wrap">
-        <h2 id="now-title">¿Por qué debería invertir en el canal de ventas Live?</h2>
-        <p class="answer">El ecommerce se está mudando al video en vivo. La pregunta es si llegas antes o después que tu competencia.</p>
-
-        <ol class="line-h" data-reveal>
-          <li class="stop">
-            <span class="ring" aria-hidden="true"></span>
-            <p class="stop-name">China</p>
-            <p>Más del <strong>18%</strong> de todo el ecommerce minorista ya se vende en live <span class="cite">(ECDB, 2025)</span>. El consumidor que se acostumbra al video corto termina comprando en video.</p>
-          </li>
-          <li class="stop">
-            <span class="ring" aria-hidden="true"></span>
-            <p class="stop-name">México y Brasil</p>
-            <p>TikTok Shop ya opera. Trae herramientas de venta dentro de la app, y las marcas que ya tienen comunidad van adelante.</p>
-          </li>
-          <li class="stop is-next">
-            <span class="ring" aria-hidden="true"></span>
-            <p class="stop-name">Perú · próxima estación</p>
-            <p>Todavía sin fecha. Una host tarda unos <strong>3 meses</strong> en llegar a su nivel, y una comunidad se arma live a live. Eso no se compra el día que llegue TikTok Shop.</p>
-          </li>
-        </ol>
-
-        <p class="imperative">Empieza hoy. Llega entrenado.</p>
-        <p class="lede narrow">Empezar ahora no es para vender más el próximo mes. Es para que, cuando el canal explote, tu marca ya sepa cómo jugar.</p>
-      </div>
-    </section>
-
-    <!-- ALCANCE NACIONAL -->
-    <section class="section reach" aria-labelledby="reach-title">
-      <div class="wrap reach-grid">
-        <div>
-          <h2 id="reach-title">¿Te imaginas vender en todo el Perú sin abrir más tiendas ni invertir en pauta de redes sociales?</h2>
-          <p class="lede">El algoritmo de TikTok muestra tu live a público de todo el país sin costo de pauta. Con couriers como Shalom, con alrededor de 190 agencias en el Perú, tu producto llega en 2 a 7 días a provincias. El live es la forma más barata de probar si una ciudad te compra, antes de invertir en un local.</p>
-          <p class="big-shift"><strong>90%</strong> de las ventas del live de Tiendas Catta se envían a otras ciudades. Y 9 de cada 10 de esas ventas van a Lima.</p>
-        </div>
-        <svg class="branches" viewBox="0 0 360 380" role="img" aria-labelledby="branches-t" data-reveal>
-          <title id="branches-t">Desde tu tienda, líneas de envío a Lima, Piura, Trujillo, Cusco, Arequipa y Puno</title>
-          <g class="br-lines">
-            <path d="M40 190 H80 L230 40 H260"/>
-            <path d="M40 190 H80 L170 100 H260"/>
-            <path class="is-main" d="M40 190 H80 L110 160 H260"/>
-            <path d="M40 190 H80 L110 220 H260"/>
-            <path d="M40 190 H80 L170 280 H260"/>
-            <path d="M40 190 H80 L230 340 H260"/>
-          </g>
-          <g class="br-stops">
-            <circle cx="260" cy="40" r="7"/><circle cx="260" cy="100" r="7"/><circle class="is-main" cx="260" cy="160" r="9"/>
-            <circle cx="260" cy="220" r="7"/><circle cx="260" cy="280" r="7"/><circle cx="260" cy="340" r="7"/>
-          </g>
-          <circle class="br-origin" cx="40" cy="190" r="15"/><circle class="br-origin-in" cx="40" cy="190" r="6"/>
-          <g class="br-labels">
-            <text x="276" y="46">Piura</text><text x="276" y="106">Trujillo</text><text class="is-main" x="276" y="166">Lima</text>
-            <text x="276" y="226">Cusco</text><text x="276" y="286">Arequipa</text><text x="276" y="346">Puno</text>
-            <text x="14" y="234" class="br-origin-t">Tu tienda</text>
-          </g>
-        </svg>
-      </div>
-    </section>
-
-    <!-- PROGRAMA -->
-    <section class="section program" id="programa" aria-labelledby="program-title">
-      <div class="wrap">
-        <h2 id="program-title">¿Cómo trabajamos contigo?</h2>
-        <p class="answer">Con un programa de 6 meses, porque así se construye un canal de verdad.</p>
-
-        <ol class="phases" data-reveal>
-          <li class="phase" style="--span: 2">
-            <span class="ph-bar" aria-hidden="true"></span>
-            <h3>Formación <span class="ph-when">Meses 1–2</span></h3>
-            <p>Tu host aprende el formato con 6 horas de live por semana. Implementamos el <span class="hl">bot con IA</span>, el set, los guiones y la medición.</p>
-          </li>
-          <li class="phase" style="--span: 1">
-            <span class="ph-bar" aria-hidden="true"></span>
-            <h3>Estándar <span class="ph-when">Mes 3</span></h3>
-            <p>Tu host llega a su nivel mínimo de calidad, medido por retención y comentarios. Se suma una host de respaldo.</p>
-          </li>
-          <li class="phase" style="--span: 3">
-            <span class="ph-bar" aria-hidden="true"></span>
-            <h3>Escala <span class="ph-when">Meses 4–6</span></h3>
-            <p>Más horas, promos exclusivas del live y venta medida por hora.</p>
-          </li>
-        </ol>
-
-        <div class="includes">
-          <h3>Qué incluye</h3>
-          <ul class="ticks">
-            <li>Diagnóstico de tu negocio y de tus lives</li>
-            <li><span class="hl">Bot con IA</span> en WhatsApp</li>
-            <li>Diseño del set</li>
-            <li>Guiones por formato</li>
-            <li>Mentoría continua a las hosts</li>
-            <li>Calendario de promos con tu equipo de marketing</li>
-            <li>Renovación mensual de campaña y set</li>
-            <li>Reporte mensual con la venta medida</li>
-          </ul>
-        </div>
-        <p class="price-note">La inversión depende de tu etapa: la conversamos en el diagnóstico.</p>
-      </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="section final" aria-labelledby="final-title">
-      <div class="wrap">
-        <h2 id="final-title">Tu competencia todavía usa el live como catálogo. <span class="hl">Tú puedes empezar a construir una comunidad hoy.</span></h2>
-        <a class="btn btn-big" href="#diagnostico" data-start-diag>Haz tu diagnóstico gratis</a>
-        <p class="btn-after">8 preguntas en 5 minutos. Al final recibes una guía para tu etapa.</p>
-        <p class="socials"><a href="https://www.tiktok.com/@masuna_consultora" target="_blank" rel="noopener">TikTok</a><a href="https://www.instagram.com/masuna_consultora" target="_blank" rel="noopener">Instagram</a></p>
-      </div>
-    </section>
-    <!-- FAQ -->
-    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
-      <div class="wrap narrow-wrap">
-        <h2 id="faq-title">Preguntas frecuentes</h2>
-        <details>
-          <summary>¿Por qué 6 meses?</summary>
-          <p>Porque una host tarda unos 3 meses en llegar a su nivel, y la comunidad se arma con constancia. Lo medimos en nuestro piloto.</p>
-        </details>
-        <details>
-          <summary>¿Necesito una host?</summary>
-          <p>Sí, de tu equipo o contratada. Nosotros la entrenamos y la acompañamos todo el programa.</p>
-        </details>
-        <details>
-          <summary>¿Y si TikTok Shop llega a Perú?</summary>
-          <p>Mejor. Quien ya tenga host, comunidad y seguidores va a aprovechar sus herramientas desde el día uno.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto cuesta?</summary>
-          <p>Depende de tu etapa. En el diagnóstico te decimos si encajas y cuál sería la inversión.</p>
-        </details>
-        <details>
-          <summary>¿Solo funciona en Lima?</summary>
-          <p>No. El live te muestra a todo el país, y la venta se envía por courier.</p>
-        </details>
-        <details>
-          <summary>¿Tengo que tener tienda física?</summary>
-          <p>No es obligatorio, pero si la tienes, el live también lleva clientas a la tienda.</p>
-        </details>
-      </div>
-    </section>
   </main>
 
   <footer class="foot">
